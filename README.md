@@ -1,3 +1,9 @@
+## Flow
+1. S3 Bucket
+2. Lambda Function
+3. EC2 Instance
+
+
 ## Bucket Policy
 ```json
 {
