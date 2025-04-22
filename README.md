@@ -1,12 +1,35 @@
-# React + Vite
+## Bucket Policy
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::ec2practicefrontend/*"
+    }
+  ]
+}
+```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## CORS headers for lambda
+```javascript
+export const handler = async (event) => {
+  const response = {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*", // allow all origins
+      "Access-Control-Allow-Headers": "*", // allow any headers
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS", // allow specific methods
+    },
+    body: JSON.stringify({
+      username: "shreyash",
+      password: "Pass@1234",
+      imageURL: "https://s3.ap-south-1.amazonaws.com/cclab.shreyash.bucket/rr.gif"
+    }),
+  };
+  return response;
+};
+```
