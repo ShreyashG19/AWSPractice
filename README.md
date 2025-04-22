@@ -20,9 +20,9 @@ export const handler = async (event) => {
   const response = {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "*", // allow all origins
-      "Access-Control-Allow-Headers": "*", // allow any headers
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS", // allow specific methods
+      "Access-Control-Allow-Origin": "*", 
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     },
     body: JSON.stringify({
       username: "shreyash",
