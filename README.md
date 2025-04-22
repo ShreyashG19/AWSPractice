@@ -33,3 +33,14 @@ export const handler = async (event) => {
   return response;
 };
 ```
+
+## Nodejs installation
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+nvm install 22
+node -v # Should print "v22.14.0".
+nvm current # Should print "v22.14.0".
+npm -v # Should print "10.9.2".
+
+```
